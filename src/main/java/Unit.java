@@ -1,11 +1,15 @@
-abstract public class Unit {
-    static final Unit INCH = new UnitInch();
-    static final Unit FOOT = new UnitFoot();
-    static final Unit YARD = new UnitYard();
+public class Unit {
+    static final Unit INCH = new Unit(1.0);
+    static final Unit FOOT = new Unit(12.0);
+    static final Unit YARD = new Unit(36.0);
 
-    public abstract double rateToInch();
+    public final double rateToInch;
+
+    public Unit(double rateToInch) {
+        this.rateToInch = rateToInch;
+    }
 
     public double rateTo(Unit unit) {
-        return 1.0 * this.rateToInch() / unit.rateToInch();
+        return 1.0 * rateToInch / unit.rateToInch;
     }
 }

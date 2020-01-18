@@ -14,7 +14,7 @@ public class Length {
 
     public Length as(String u) {
         Unit unit = stringToUnit(u);
-        return temp_as(u, unit);
+        return temp_as(unit);
     }
 
     private String unitToString(Unit unit) {
@@ -39,7 +39,7 @@ public class Length {
         return null;
     }
 
-    public Length temp_as(String u, Unit unit) {
+    public Length temp_as(Unit unit) {
         if (isFoot(this.unit)) {
             if (unit == Unit.YARD) {
                 return new Length(this.value / 3, unit);

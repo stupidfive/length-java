@@ -8,31 +8,43 @@ public class Length {
     }
 
     public Length as(String u) {
-        if (this.unit.equals("f")) {
-            if (u.equals("yard")) {
+        if (isFoot(this.unit)) {
+            if (isYard(u)) {
                 return new Length(this.value / 3, u);
-            } else if (u.equals("inch")) {
+            } else if (isInch(u)) {
                 return new Length(this.value * 12, u);
             }
         }
 
-        if (this.unit.equals("yard")) {
-            if (u.equals("inch")) {
+        if (isYard(this.unit)) {
+            if (isInch(u)) {
                 return new Length(this.value * 36, u);
-            } else if (u.equals("f")){
+            } else if (isFoot(u)){
                 return new Length(this.value * 3, u);
             }
         }
 
-        if (this.unit.equals("inch")) {
-            if (u.equals("f")) {
+        if (isInch(this.unit)) {
+            if (isFoot(u)) {
                 return new Length(this.value / 12, u);
-            } else if (u.equals("yard")) {
+            } else if (isYard(u)) {
                 return new Length(this.value / 36, u);
             }
         }
 
         return this;
+    }
+
+    private boolean isYard(String u) {
+        return u.equals("yard");
+    }
+
+    private boolean isFoot(String u) {
+        return u.equals("f");
+    }
+
+    private boolean isInch(String u) {
+        return u.equals("inch");
     }
 
     public double getValue() {

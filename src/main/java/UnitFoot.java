@@ -1,6 +1,6 @@
 public class UnitFoot extends Unit {
     @Override
-    public int rateToInch() {
+    public double rateToInch() {
         return 12;
     }
 }

@@ -1,6 +1,6 @@
 public class UnitYard extends Unit {
     @Override
-    public int rateToInch() {
+    public double rateToInch() {
         return 36;
     }
 }

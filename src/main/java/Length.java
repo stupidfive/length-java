@@ -48,18 +48,6 @@ public class Length {
         return this;
     }
 
-    private boolean isYard(String u) {
-        return u.equals("yard");
-    }
-
-    private boolean isFoot(String u) {
-        return u.equals("f");
-    }
-
-    private boolean isInch(String u) {
-        return u.equals("inch");
-    }
-
     public double getValue() {
         return this.value;
     }

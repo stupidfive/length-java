@@ -8,32 +8,31 @@ public class Length {
     }
 
     public Length as(String u) {
-        Length length = this;
         if (this.unit.equals("f")) {
             if (u.equals("yard")) {
-                length = new Length(this.value / 3, u);
+                return new Length(this.value / 3, u);
             } else if (u.equals("inch")) {
-                length = new Length(this.value * 12, u);
+                return new Length(this.value * 12, u);
             }
         }
 
         if (this.unit.equals("yard")) {
             if (u.equals("inch")) {
-                length = new Length(this.value * 36, u);
+                return new Length(this.value * 36, u);
             } else if (u.equals("f")){
-                length = new Length(this.value * 3, u);
+                return new Length(this.value * 3, u);
             }
         }
 
         if (this.unit.equals("inch")) {
             if (u.equals("f")) {
-                length = new Length(this.value / 12, u);
+                return new Length(this.value / 12, u);
             } else if (u.equals("yard")) {
-                length = new Length(this.value / 36, u);
+                return new Length(this.value / 36, u);
             }
         }
 
-        return length;
+        return this;
     }
 
     public double getValue() {

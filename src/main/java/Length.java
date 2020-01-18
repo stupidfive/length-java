@@ -8,6 +8,10 @@ public class Length {
     }
 
     public Length as(String u) {
+        return temp_as(u, null);
+    }
+
+    public Length temp_as(String u, Unit unit) {
         if (isFoot(this.unit)) {
             if (isYard(u)) {
                 return new Length(this.value / 3, u);

@@ -8,11 +8,11 @@ public class Length {
     }
 
     public Length as(Unit unit) {
-        return new Length(this.value * this.unit.rateTo(unit), unit);
+        return new Length(value * this.unit.rateTo(unit), unit);
     }
 
     public double getValue() {
-        return this.value;
+        return value;
     }
 
     public Unit getUnit() {

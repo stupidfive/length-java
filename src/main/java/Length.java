@@ -23,7 +23,7 @@ public class Length {
         return "";
     }
 
-    public Length temp_as(Unit unit) {
+    public Length as(Unit unit) {
         if (isFoot(this.unit)) {
             if (unit == Unit.YARD) {
                 return new Length(this.value / 3, unit);

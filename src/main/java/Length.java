@@ -12,11 +12,6 @@ public class Length {
         this.unit = unitToString(unit);
     }
 
-    public Length as(String u) {
-        Unit unit = stringToUnit(u);
-        return temp_as(unit);
-    }
-
     private String unitToString(Unit unit) {
         if (unit == Unit.INCH) {
             return "inch";
@@ -26,17 +21,6 @@ public class Length {
             return "yard";
         }
         return "";
-    }
-
-    private Unit stringToUnit(String u) {
-        if (isInch(u)) {
-            return Unit.INCH;
-        } else if (isFoot(u)) {
-            return Unit.FOOT;
-        } else if (isYard(u)) {
-            return Unit.YARD;
-        }
-        return null;
     }
 
     public Length temp_as(Unit unit) {

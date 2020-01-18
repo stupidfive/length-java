@@ -25,25 +25,25 @@ public class Length {
 
     public Length temp_as(String u, Unit unit) {
         if (isFoot(this.unit)) {
-            if (isYard(u)) {
+            if (unit == Unit.YARD) {
                 return new Length(this.value / 3, u);
-            } else if (isInch(u)) {
+            } else if (unit == Unit.INCH) {
                 return new Length(this.value * 12, u);
             }
         }
 
         if (isYard(this.unit)) {
-            if (isInch(u)) {
+            if (unit == Unit.INCH) {
                 return new Length(this.value * 36, u);
-            } else if (isFoot(u)){
+            } else if (unit == Unit.FOOT) {
                 return new Length(this.value * 3, u);
             }
         }
 
         if (isInch(this.unit)) {
-            if (isFoot(u)) {
+            if (unit == Unit.FOOT) {
                 return new Length(this.value / 12, u);
-            } else if (isYard(u)) {
+            } else if (unit == Unit.YARD) {
                 return new Length(this.value / 36, u);
             }
         }

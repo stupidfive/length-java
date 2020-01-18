@@ -4,4 +4,8 @@ abstract public class Unit {
     static Unit YARD = new UnitYard();
 
     public abstract int rateToInch();
+
+    public double rateTo(Unit unit) {
+        return this.rateToInch() / unit.rateToInch();
+    }
 }

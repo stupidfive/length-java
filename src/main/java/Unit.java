@@ -1,11 +1,12 @@
-public class Unit {
-    static final Unit INCH = new Unit(1.0);
-    static final Unit FOOT = new Unit(12.0);
-    static final Unit YARD = new Unit(36.0);
+public enum Unit {
+    INCH(1.0),
+    FOOT(12.0),
+    YARD(36.0),
+    ;
 
     public final double rateToInch;
 
-    public Unit(double rateToInch) {
+    Unit(double rateToInch) {
         this.rateToInch = rateToInch;
     }
 

@@ -2,11 +2,6 @@ public class Length {
     private final double value;
     private final String unit;
 
-    public Length(double val, String u) {
-        this.value = val;
-        this.unit = u;
-    }
-
     public Length(double val, Unit unit) {
         this.value = val;
         this.unit = unitToString(unit);

@@ -8,7 +8,19 @@ public class Length {
     }
 
     public Length as(String u) {
-        return temp_as(u, null);
+        Unit unit = stringToUnit(u);
+        return temp_as(u, unit);
+    }
+
+    private Unit stringToUnit(String u) {
+        if (isInch(u)) {
+            return Unit.INCH;
+        } else if (isFoot(u)) {
+            return Unit.FOOT;
+        } else if (isYard(u)) {
+            return Unit.YARD;
+        }
+        return null;
     }
 
     public Length temp_as(String u, Unit unit) {

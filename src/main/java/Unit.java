@@ -6,6 +6,6 @@ abstract public class Unit {
     public abstract int rateToInch();
 
     public double rateTo(Unit unit) {
-        return this.rateToInch() / unit.rateToInch();
+        return 1.0 * this.rateToInch() / unit.rateToInch();
     }
 }

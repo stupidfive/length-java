@@ -8,31 +8,7 @@ public class Length {
     }
 
     public Length as(Unit unit) {
-        if (this.unit == Unit.FOOT) {
-            if (unit == Unit.YARD) {
-                return new Length(this.value / 3, unit);
-            } else if (unit == Unit.INCH) {
-                return new Length(this.value * 12, unit);
-            }
-        }
-
-        if (this.unit == Unit.YARD) {
-            if (unit == Unit.INCH) {
-                return new Length(this.value * 36, unit);
-            } else if (unit == Unit.FOOT) {
-                return new Length(this.value * 3, unit);
-            }
-        }
-
-        if (this.unit == Unit.INCH) {
-            if (unit == Unit.FOOT) {
-                return new Length(this.value / 12, unit);
-            } else if (unit == Unit.YARD) {
-                return new Length(this.value / 36, unit);
-            }
-        }
-
-        return this;
+        return new Length(this.value * this.unit.rateTo(unit), unit);
     }
 
     public double getValue() {

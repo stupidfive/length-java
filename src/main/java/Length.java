@@ -1,10 +1,12 @@
 public class Length {
     private final double value;
     private final String unit;
+    private final Unit temp_unit;
 
     public Length(double val, Unit unit) {
         this.value = val;
         this.unit = unitToString(unit);
+        this.temp_unit = unit;
     }
 
     private String unitToString(Unit unit) {
